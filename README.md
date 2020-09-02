@@ -11,10 +11,10 @@ using UnityEngine;
 
 public class Example
 {
-    void Start()
+    void Start(int fps)
     {
         // Make the game run as fast as possible
-        Application.targetFrameRate = 300;
+        Application.targetFrameRate = fps;
         // Enable Custom FPS
         QualitySettings.vSyncCount = 0;
     }
@@ -24,3 +24,9 @@ public class Example
 # Download
 
 https://github.com/MauryDev/FPS-Unlock-KoGaMa/releases/
+
+# Requisitos
+
+- Windows 7 Service Pack 1,Windows 8 ou Windows 10
+- .Net Framework 4.7.2 ou maior
+- Microsoft Visual C++ 2015-2019 Redistributable
