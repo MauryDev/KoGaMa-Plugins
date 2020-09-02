@@ -1,4 +1,4 @@
-# FPS-Unlock-KoGaMa
+# FPS Unlock KoGaMa
 FPS Unlock for KoGaMa
 
 # Como funciona o FPS Unlock KoGaMa
