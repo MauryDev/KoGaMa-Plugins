@@ -30,3 +30,15 @@ https://github.com/MauryDev/FPS-Unlock-KoGaMa/releases/
 - Windows 7 Service Pack 1,Windows 8 ou Windows 10
 - .Net Framework 4.7.2 ou maior
 - Microsoft Visual C++ 2015-2019 Redistributable
+
+# Members
+
+## Desenvolvedor
+Maury Developer
+
+## Testers
+Daft
+Derloco
+
+## Criador do Icone
+Turista264
