@@ -43,3 +43,7 @@ Derloco
 
 ## Criador do Icone
 Turista264
+
+## Helpers
+Isaack_GT
+TiaoFofao
