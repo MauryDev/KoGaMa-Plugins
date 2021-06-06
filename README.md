@@ -1,5 +1,13 @@
 # KoGaMa Plugin
 
+## Tools
+
+- Build
+- PvP
+- Quality
+- Debug
+
+
 ## Back-End
 Assembly
 
