@@ -1,3 +1,4 @@
+
 # KoGaMa Plugin
 
 ## Tools
@@ -7,6 +8,8 @@
 - Quality
 - Debug
 
+## Download
+[KoGaMa Plugin 3.0.0](https://github.com/MauryDev/KoGaMa-Plugins/releases/download/3.0.0/KoGaMa.Plugins.rar)
 
 ## Back-End
 Assembly
@@ -25,3 +28,4 @@ Eminent
 Tiaofofao
 
 Turista264
+
