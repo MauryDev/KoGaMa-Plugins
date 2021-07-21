@@ -9,7 +9,7 @@
 - Debug
 
 ## Download
-[KoGaMa Plugin 3.0.0](https://github.com/MauryDev/KoGaMa-Plugins/releases/download/3.0.0/KoGaMa.Plugins.rar)
+[KoGaMa Plugin 3.0.0](https://github.com/MauryDev/KoGaMa-Plugins/releases/download/4.0/KoGaMaPlugin.zip)
 
 ## Back-End
 Assembly
