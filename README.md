@@ -9,23 +9,20 @@
 - Debug
 
 ## Download
-[KoGaMa Plugin 5.0.0](https://github.com/MauryDev/KoGaMa-Plugins/releases/download/5.0/KoGaMaPlugin.zip)
+[KoGaMa Plugin.lua]([https://github.com/MauryDev/KoGaMa-Plugins/releases/download/5.0/KoGaMaPlugin.zip](https://raw.githubusercontent.com/MauryDev/KoGaMa-Plugins/master/Installer/KoGaMaPlugin.lua))
 
 ## Back-End
-Assembly
+C++
 
 ## Front End
-C#
+lua and C#
 
 ## Dev
 MauryDev
 
 ## Helpers
-Isaack_GT
 
-Eminent
-
+Henrique
 Tiaofofao
-
-Turista264
+Drakkoo
 
