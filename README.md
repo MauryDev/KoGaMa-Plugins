@@ -15,7 +15,7 @@
 C++
 
 ## Front End
-lua and C#
+Lua
 
 ## Dev
 MauryDev
