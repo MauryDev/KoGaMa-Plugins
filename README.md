@@ -11,10 +11,8 @@
 ## Download
 [KoGaMa Plugin.lua](https://raw.githubusercontent.com/MauryDev/KoGaMa-Plugins/master/Installer/KoGaMaPlugin.lua)
 
-## Back-End
-C++
 
-## Front End
+## Language
 Lua
 
 ## Dev
