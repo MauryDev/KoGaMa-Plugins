@@ -12,4 +12,5 @@ kogamaplugin.lua
 ## CrossHair Texture
 
 ![](CrossHair1.png "Texture")
+
 ![](CrossHair2.png "Texture")
