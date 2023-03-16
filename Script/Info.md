@@ -8,3 +8,8 @@ kogamaplugin.lua
 ![](Atlas-sharedassets0.assets-344.png "Texture")
 ![](Atlas-sharedassets0.assets2-344.png "Texture")
 ![](Atlas-sharedassets0.assets3-344.png "Texture")
+
+## CrossHair Texture
+
+![](CrossHair1.png "Texture")
+![](CrossHair2.png "Texture")
