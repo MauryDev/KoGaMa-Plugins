@@ -1,4 +1,4 @@
-local HelperLib = import"Helper"
+local HelperLib = require"Helper"
 local AssemblyInfo = HelperLib.AssemblyInfo
 
 local function GetRequest(url,callback)
