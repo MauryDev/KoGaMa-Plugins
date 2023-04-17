@@ -1,13 +1,70 @@
 # KoGaMa Plugin Loader
-## Old Version
+## Loader V2
 ```lua
-local a=function(b,c)if c then return function(...)return Il2Cpp.Runtime.Invoke(b,nil,{...},function(d)print("Error")end)end else return function(e,...)return Il2Cpp.Runtime.Invoke(b,e,{...},function(d)print("Error")end)end end end;local f=function()local g=Il2Cpp.Domain.MainDomain;local h=g:AssemblyOpen("UnityEngine.UnityWebRequestModule.dll")local i=h.Image;local j={}do local k=Il2Cpp.Class.FromName(i,"UnityEngine.Networking","UnityWebRequest")local l=k:GetMethodFromName("Get",1)local m=k:GetMethodFromName("get_isDone",0)local n=k:GetMethodFromName("SendWebRequest",0)local o=k:GetMethodFromName("get_downloadHandler",0)j["UnityEngine.Networking.UnityWebRequest.Get"]=a(l,true)j["UnityEngine.Networking.UnityWebRequest.get_isDone"]=a(m,false)j["UnityEngine.Networking.UnityWebRequest.SendWebRequest"]=a(n,false)j["UnityEngine.Networking.UnityWebRequest.get_downloadHandler"]=a(o,false)end;do local p=Il2Cpp.Class.FromName(i,"UnityEngine.Networking","DownloadHandler")local q=p:GetMethodFromName("get_text",0)j["UnityEngine.Networking.DownloadHandler.get_text"]=a(q,false)end;return j end;local r=f()local s=nil;local t=true;Il2Cpp.RegisterInUpdate("LoadScript##KoGaMaPlugin.lua",function()if t then if s==nil then local u=Il2Cpp.String("https://raw.githubusercontent.com/MauryDev/KoGaMa-Plugins/master/Script/kogamaplugin.lua")s=r["UnityEngine.Networking.UnityWebRequest.Get"](u)r["UnityEngine.Networking.UnityWebRequest.SendWebRequest"](s)else local v=r["UnityEngine.Networking.UnityWebRequest.get_isDone"](s)local w=Il2Cpp.Primitives.GetBool(v.Unbox)if w then local x=r["UnityEngine.Networking.UnityWebRequest.get_downloadHandler"](s)local y=r["UnityEngine.Networking.DownloadHandler.get_text"](x)local z=tostring(Il2Cpp.String.FromAny(y).Chars)local A=load(z)if A then pcall(A)end;t=false;Il2Cpp.UnregisterInUpdate("LoadScript##KoGaMaPlugin.lua")end end end end)
+local HelperLib = import("Helper.lua")
+local AssemblyInfo = HelperLib.AssemblyInfo
 
+local function GetRequest(url,callback)
+    local UnityEngine_UnityWebRequestModule = AssemblyInfo.FromName("UnityEngine.UnityWebRequestModule.dll")
+
+    local UnityWebRequest =  UnityEngine_UnityWebRequestModule.GetClass("UnityEngine.Networking", "UnityWebRequest")
+    local request = UnityWebRequest.GetMethod("Get",{"string"})(url)
+    request.GetMethod("SendWebRequest")()
+    local name = tostring(request)
+    Il2Cpp.RegisterInUpdate(name,function ()
+        local isdone = request.GetProperty("isDone").get()
+        if isdone then
+            local downloadHandler = request.GetProperty("downloadHandler").get()
+            local text = downloadHandler.GetProperty("text").get()
+            callback(text)
+
+            Il2Cpp.UnregisterInUpdate(name)
+        end
+    end)
+end
+
+Il2Cpp.RegisterInOneUpdate(function()
+    GetRequest("https://maurydev.github.io/KoGaMa-Plugins/Script/kogamaplugin.lua",function(content)
+        local result = load(tostring(content))
+        if result ~= nil then
+            pcall(result,"","")
+        end
+    end)
+end)
 ```
 
-## New Version
+## Loader V3
 
 ```lua
-local a=import("Helper.lua")local b=a.AssemblyInfo;local function c(d,e)local f=b.FromName("UnityEngine.UnityWebRequestModule.dll")local g=f.GetClass("UnityEngine.Networking","UnityWebRequest")local h=g.GetMethod("Get",{"string"})(d)h.GetMethod("SendWebRequest")()local i=tostring(h)Il2Cpp.RegisterInUpdate(i,function()local j=h.GetProperty("isDone").get()if j then local k=h.GetProperty("downloadHandler").get()local l=k.GetProperty("text").get()e(l)Il2Cpp.UnregisterInUpdate(i)end end)end;Il2Cpp.RegisterInOneUpdate(function()c("https://maurydev.github.io/KoGaMa-Plugins/Script/KoGaMaPluginV2.lua",function(m)local n=load(tostring(m))if n~=nil then pcall(n,"","")end end)end)
+local HelperLib = import("Helper.lua")
+local AssemblyInfo = HelperLib.AssemblyInfo
+
+local function GetRequest(url,callback)
+    local UnityEngine_UnityWebRequestModule = AssemblyInfo.FromName("UnityEngine.UnityWebRequestModule.dll")
+
+    local UnityWebRequest =  UnityEngine_UnityWebRequestModule.GetClass("UnityEngine.Networking", "UnityWebRequest")
+    local request = UnityWebRequest.GetMethod("Get",{"string"})(url)
+    request.GetMethod("SendWebRequest")()
+    local name = tostring(request)
+    Unity.RegisterInUpdate(name,function ()
+        local isdone = request.GetProperty("isDone").get()
+        if isdone then
+            local downloadHandler = request.GetProperty("downloadHandler").get()
+            local text = downloadHandler.GetProperty("text").get()
+            callback(text)
+
+            Unity.UnregisterInUpdate(name)
+        end
+    end)
+end
+
+Unity.RegisterInOneUpdate(function()
+    GetRequest("https://maurydev.github.io/KoGaMa-Plugins/Script/kogamaplugin.lua",function(content)
+        local result = load(tostring(content))
+        if result ~= nil then
+            pcall(result,"","")
+        end
+    end)
+end)
 
 ```
