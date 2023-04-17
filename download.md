@@ -24,7 +24,7 @@ local function GetRequest(url,callback)
 end
 
 Il2Cpp.RegisterInOneUpdate(function()
-    GetRequest("https://maurydev.github.io/KoGaMa-Plugins/Script/kogamaplugin.lua",function(content)
+    GetRequest("https://maurydev.github.io/KoGaMa-Plugins/Script/KoGaMaPluginV2.lua",function(content)
         local result = load(tostring(content))
         if result ~= nil then
             pcall(result,"","")
