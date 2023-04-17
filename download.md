@@ -36,7 +36,7 @@ end)
 ## Loader V3
 
 ```lua
-local HelperLib = import("Helper.lua")
+local HelperLib = require"Helper"
 local AssemblyInfo = HelperLib.AssemblyInfo
 
 local function GetRequest(url,callback)
@@ -59,7 +59,7 @@ local function GetRequest(url,callback)
 end
 
 Unity.RegisterInOneUpdate(function()
-    GetRequest("https://maurydev.github.io/KoGaMa-Plugins/Script/kogamaplugin.lua",function(content)
+    GetRequest("https://maurydev.github.io/KoGaMa-Plugins/Script/KoGaMaPluginV3.lua",function(content)
         local result = load(tostring(content))
         if result ~= nil then
             pcall(result,"","")
