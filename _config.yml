@@ -1,1 +1,5 @@
-theme: jekyll-theme-cayman
+remote_theme: "dracula/gh-pages"
+gem "github-pages", group: :jekyll_plugins
+
+title: Unity Exploit
+description: Exploit for Unity Games
