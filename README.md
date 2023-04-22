@@ -26,4 +26,4 @@ Tiaofofao
 
 Drakkoo
 
-<a href="/images/myw3schoolsimage.jpg" download>Download</a>
+<a href="https://github.com/MauryDev/KoGaMa-Plugins/blob/master/Installer/KoGaMaPluginV3.lua" download>Download</a>
