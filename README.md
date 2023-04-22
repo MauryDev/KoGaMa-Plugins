@@ -9,7 +9,8 @@
 - Debug
 
 ## Download
-[KoGaMa Plugin.lua](https://maurydev.github.io/KoGaMa-Plugins/download)
+[Source Code](https://maurydev.github.io/KoGaMa-Plugins/download)
+[Installers](https://maurydev.github.io/KoGaMa-Plugins/Installer)
 
 
 ## Language
