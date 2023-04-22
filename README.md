@@ -26,4 +26,3 @@ Tiaofofao
 
 Drakkoo
 
-<a href="https://github.com/MauryDev/KoGaMa-Plugins/blob/master/Installer/KoGaMaPluginV3.lua" download>Download</a>
