@@ -25,6 +25,5 @@ Henrique
 Tiaofofao
 
 Drakkoo
-<p>Download
-<a href="/images/myw3schoolsimage.jpg" download>
-  </p>
+
+<a href="/images/myw3schoolsimage.jpg" download>Download</a>
