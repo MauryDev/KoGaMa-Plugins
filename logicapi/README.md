@@ -17,9 +17,15 @@
 local LogicAPI = require("LogicAPI")
 local root = LogicAPI.Root
 root.Execute(function (root)
-    local tnt = root.Create_Explosives()
+    local and1 = root.Create_And()
+    local text1 = root.Create_Text()
+
     local lever1 = root.Create_Lever()
-    lever1.AddOut(tnt)
+    local lever2 = root.Create_Lever()
+    and1.AddIn(lever1,lever2)
+    and1.AddOut(text1)
+    text1.SetText("Hello World!")
+    
 end)
 
 ```
