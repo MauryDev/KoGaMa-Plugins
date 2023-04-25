@@ -14,6 +14,10 @@
 [Installers](https://maurydev.github.io/KoGaMa-Plugins/Installer)
 
 
+## Logic API
+[Info](https://maurydev.github.io/KoGaMa-Plugins/logicapi)
+
+
 ## Language
 Lua
 
