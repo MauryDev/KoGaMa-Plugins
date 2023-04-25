@@ -9,8 +9,8 @@
 [Docs](https://maurydev.github.io/KoGaMa-Plugins/logicapi/docs)
 
 ## Download
-[LogicAPI.bin](https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/LogicAPI.bin)
-
+[Script](https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/LogicAPI.bin)
+[Script Def](https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/LogicAPI.def.lua)
 ## Example
 
 ```lua
