@@ -5,6 +5,11 @@
 - Unity Exploit 3.0
 - Helper Lib
 
+## Documentation
+[Docs](https://maurydev.github.io/KoGaMa-Plugins/logicapi/docs)
+
+## Download
+[LogicAPI.bin](https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/LogicAPI.bin)
 
 ## Example
 
