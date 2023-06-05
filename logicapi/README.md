@@ -4,6 +4,7 @@
 ## Requiriments
 - Unity Exploit 3.0
 - Helper Lib
+- QueryEventView 1.0
 
 ## Documentation
 [Docs](https://maurydev.github.io/KoGaMa-Plugins/logicapi/docs)
@@ -12,6 +13,9 @@
 [Script](https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/LogicAPI.bin)
 
 [Script Def](https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/LogicAPI.def.lua)
+
+[Query Event View](https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/QueryEventView.dll)
+
 ## Example
 
 ```lua
