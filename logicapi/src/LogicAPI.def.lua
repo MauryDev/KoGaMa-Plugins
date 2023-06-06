@@ -18,14 +18,14 @@
 ---@field y number
 ---@field z number
 
----@class logicBase
+---@class LogicBase
 ---@field id integer
 ---@field realId integer
 ---@field type integer
----@field AddIn fun(...:logicBase):nil
----@field AddOut fun(...:logicBase):nil
----@field AddConnectorObject fun(...:logicBase):nil
----@field AddInObject fun(...:logicBase):nil
+---@field AddIn fun(...:LogicBase):nil
+---@field AddOut fun(...:LogicBase):nil
+---@field AddConnectorObject fun(...:LogicBase):nil
+---@field AddInObject fun(...:LogicBase):nil
 ---@field SetPosition fun(v3: Vector3): nil
 ---@field SetRotation fun(euler: Vector3): nil
 ---@field GetRotation fun(): Vector3
@@ -41,30 +41,30 @@
 ---@field ReplaceCube fun(intv: IntVector,materialId: integer): boolean
 
 
----@class LogicModel : logicBase
+---@class LogicModel : LogicBase
 ---@field Execute fun(callback: fun(modelmanager: LogicModel_Execute):any):nil
 
----@class LogicPressurePlate : logicBase
+---@class LogicPressurePlate : LogicBase
 ---@field SetHide fun(value: boolean):nil
 
----@class LogicDelayCube : logicBase
+---@class LogicDelayCube : LogicBase
 ---@field SetDelay fun(value: number):nil
 ---@field SetDuration fun(value: number):nil
 
----@class LogicCountingCube : logicBase
+---@class LogicCountingCube : LogicBase
 ---@field SetStartingValue fun(value: integer):nil
 ---@field SetReset fun(value: boolean):nil
 
----@class LogicFire : logicBase
+---@class LogicFire : LogicBase
 ---@field SetColor fun(value: integer[]):nil
 ---@field SetIntensity fun(value: number):nil
 
----@class LogicGlobalSpeaker : logicBase
+---@class LogicGlobalSpeaker : LogicBase
 ---@field SetVolume fun(value: number):nil
 ---@field SetPitch fun(value: number):nil
 ---@field SetUrl fun(value: string):nil
 
----@class LogicSpeaker : logicBase
+---@class LogicSpeaker : LogicBase
 ---@field SetVolume fun(value: number):nil
 ---@field SetPitch fun(value: number):nil
 ---@field SetRange fun(value: number):nil
@@ -72,50 +72,53 @@
 ---@field SetLoop fun(value: boolean):nil
 ---@field SetUrl fun(value: string):nil
 
----@class LogicLever : logicBase
+---@class LogicLever : LogicBase
 ---@field SetBeginActivated fun(value: boolean):nil
 
----@class LogicModelHider : logicBase
+---@class LogicModelHider : LogicBase
 ---@field SetShowOutline fun(value: boolean):nil
 
----@class LogicPointLight : logicBase
+---@class LogicPointLight : LogicBase
 ---@field SetIntensity fun(value: number):nil
 ---@field SetRange fun(value: number):nil
 ---@field SetHide fun(value: boolean):nil
 ---@field SetHalo fun(value: integer):nil
 ---@field SetColor fun(value: integer[]):nil
 
----@class LogicPulseBox : logicBase
+---@class LogicPulseBox : LogicBase
 ---@field SetIntervalOn fun(value: number):nil
 ---@field SetIntervalOff fun(value: number):nil
 
----@class LogicSkybox : logicBase
+---@class LogicSkybox : LogicBase
 ---@field SetSunAngle fun(value: number):nil
 ---@field SetFogDensity fun(value: number):nil
 ---@field SetColor fun(value: integer[]):nil
 
 
----@class LogicSmoke : logicBase
+---@class LogicSmoke : LogicBase
 ---@field SetWind fun(value: number):nil
 ---@field SetLength fun(value: number):nil
 ---@field SetColor fun(value: integer[]):nil
 
----@class LogicTargetCube : logicBase
+---@class LogicTargetCube : LogicBase
 ---@field SetDuration fun(value: number):nil
 
----@class LogicText : logicBase
+---@class LogicText : LogicBase
 ---@field SetText fun(value: string):nil
 ---@field SetTextSize fun(value: number):nil
 
----@class LogicToggleBox : logicBase
+---@class LogicToggleBox : LogicBase
 ---@field SetOnce fun(value: boolean):nil
 
----@class LogicTriggerCube : logicBase
+---@class LogicTriggerCube : LogicBase
 ---@field SetScaleX fun(value: number):nil
 ---@field SetScaleY fun(value: number):nil
 ---@field SetScaleZ fun(value: number):nil
 
----@class LogicWindTurbine : logicBase
+---@class LogicGroup : LogicBase
+---@field Execute fun(value: fun(): any):nil
+
+---@class LogicWindTurbine : LogicBase
 ---@field SetWindSize fun(value: number):nil
 ---@field SetWindPitch fun(value: number):nil
 
@@ -137,21 +140,21 @@
 ---@field GetWorldObjectsCount fun(): integer
 ---@field GetPrototypesCount fun(): integer
 ---@field Execute fun(callback: fun(logicmanager: LogicManager): nil)
----@field GetLogic fun(id: number): logicBase
----@field Create_And fun(): logicBase
+---@field GetLogic fun(id: number): LogicBase
+---@field Create_And fun(): LogicBase
 ---@field Create_CountingCube fun(): LogicCountingCube
 ---@field Create_DelayCube fun(): LogicDelayCube
----@field Create_Explosives fun(): logicBase
+---@field Create_Explosives fun(): LogicBase
 ---@field Create_Fire fun(): LogicFire
 ---@field Create_GlobalSpeaker fun(): LogicGlobalSpeaker
 ---@field Create_Lever fun(): LogicLever
 ---@field Create_Model fun(scale: number): LogicModel
 ---@field Create_ModelHider fun(): LogicModelHider
----@field Create_Negate fun(): logicBase
+---@field Create_Negate fun(): LogicBase
 ---@field Create_PointLight fun(): LogicPointLight
 ---@field Create_PressurePlate fun(): LogicPressurePlate
 ---@field Create_PulseBox fun(): LogicPulseBox
----@field Create_RandomCube fun(): logicBase
+---@field Create_RandomCube fun(): LogicBase
 ---@field Create_Skybox fun(): LogicSkybox
 ---@field Create_Smoke fun(): LogicSmoke
 ---@field Create_Speaker fun(): LogicSpeaker
@@ -160,6 +163,7 @@
 ---@field Create_ToggleBox fun(): LogicToggleBox
 ---@field Create_TriggerCube fun(): LogicTriggerCube
 ---@field Create_WindTurbine fun(): LogicWindTurbine
+---@field Create_Group fun(): LogicGroup
 
 
 ---@class LogicAPI
