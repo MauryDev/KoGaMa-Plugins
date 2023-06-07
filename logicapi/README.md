@@ -11,7 +11,8 @@
 
 ## Script Doc
 
-[Script Def](https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/LogicAPI.def.lua)
+[Logic API Def](https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/LogicAPI.def.lua)
+[QueryEventView Def](https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/QueryEventView.def.lua)
 
 ## Script Install 
 
