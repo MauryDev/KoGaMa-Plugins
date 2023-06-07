@@ -16,11 +16,10 @@
 ## Script Install 
 
 ```lua
-
 local HelperLib = require"Helper"
 local AssemblyInfo = HelperLib.AssemblyInfo
 local LibsPath = EnginePath() .. "\\Libs\\"
-
+Process.ShowConsole()
 local function GetRequest(url,callback)
     local UnityEngine_UnityWebRequestModule = AssemblyInfo.FromName("UnityEngine.UnityWebRequestModule.dll")
 
@@ -40,7 +39,7 @@ local function GetRequest(url,callback)
     end)
 end
 
-local function DownloadFile(url,outputfile)
+local function DownloadFile(url,outputfile,callback)
     GetRequest(url,function(content)
         local contentlen = content.GetProperty("LongLength").get()
         local mscorlib = AssemblyInfo.FromName("mscorlib.dll")
@@ -52,13 +51,21 @@ local function DownloadFile(url,outputfile)
         )
         logicapi2.GetMethod("Write",{"System.Byte[]", "int", "int"})(content,0,contentlen)
         logicapi2.GetMethod("Dispose",{"bool"})(true)
+        callback()
     end)
 end
 Unity.RegisterInOneUpdate(function()
-    DownloadFile("https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/LogicAPI.bin",LibsPath .. "LogicAPI.bin")
-    DownloadFile("https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/QueryEventView.dll",LibsPath .. "QueryEventView.dll")
+    DownloadFile("https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/LogicAPI.bin",LibsPath .. "LogicAPI.bin",function ()
+        print("LogicAPI - Success")
+        DownloadFile("https://maurydev.github.io/KoGaMa-Plugins/logicapi/src/QueryEventView.dll",LibsPath .. "QueryEventView.dll",function ()
+            print("QueryEventView - Success")
+        end)
+    end)
 
 end)
+
+
+
 ```
 
 ## Example
